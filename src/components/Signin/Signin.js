@@ -34,6 +34,7 @@ class Signin extends React.Component {
                     this.props.onRouteChange('home');
                 }
             })
+            .catch(err => console.log("Wrong email or password"));
         // console.log(this.state);
     }
 
