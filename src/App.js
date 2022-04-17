@@ -60,7 +60,7 @@ class App extends React.Component {
   componentDidMount() {
     fetch('https://dry-eyrie-57448.herokuapp.com/')
       .then(response => response.json())
-      .then(console.log)
+      // .then(console.log)
       .catch(err => { console.log(err) });
   }
 
