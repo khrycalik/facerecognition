@@ -58,9 +58,10 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:3001/')
+    fetch('https://dry-eyrie-57448.herokuapp.com/')
       .then(response => response.json())
-      .then(console.log);
+      .then(console.log)
+      .catch(err => { console.log(err) });
   }
 
   calculateFaceLocation = (data) => {
@@ -86,7 +87,7 @@ class App extends React.Component {
 
   onButtonSubmit = () => {
     this.setState({ imageURL: this.state.input });
-    fetch('http://localhost:3001/imageurl', {
+    fetch('https://dry-eyrie-57448.herokuapp.com/imageurl', {
       method: 'post',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify({
@@ -97,7 +98,7 @@ class App extends React.Component {
       .then(response => {
         // console.log(response.outputs[0].data.regions[0].region_info.bounding_box);
         if (response) {
-          fetch('http://localhost:3001/image', {
+          fetch('https://dry-eyrie-57448.herokuapp.com/image', {
             method: 'put',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({

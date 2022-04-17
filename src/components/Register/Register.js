@@ -25,7 +25,7 @@ class Register extends React.Component {
     }
 
     onSubmitRegister = () => {
-        fetch("http://localhost:3001/register", {
+        fetch("https://dry-eyrie-57448.herokuapp.com/register", {
             method: 'post',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({
@@ -41,6 +41,7 @@ class Register extends React.Component {
                     this.props.onRouteChange('home');
                 }
             })
+            .catch(err => { console.log(err) });
         console.log(this.state);
     }
 
